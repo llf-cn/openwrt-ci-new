@@ -16,9 +16,6 @@ find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's|\.\./\.\./la
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's|PKG_SOURCE_URL:=@GHREPO|PKG_SOURCE_URL:=https://github.com|g' {}
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's|PKG_SOURCE_URL:=@GHCODELOAD|PKG_SOURCE_URL:=https://codeload.github.com|g' {}
 
-./scripts/feeds update -a
-./scripts/feeds install -a
-
 # ===== 强制锁定 CMIOT-AX18 设备 =====
 sed -i '/CONFIG_TARGET_.*DEVICE_/d' .config
 cat >> .config <<'EOF'
