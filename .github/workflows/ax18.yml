@@ -3,7 +3,7 @@ name: Build OpenWrt for CMIOT-AX18
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 20 * * *
+    - cron: 0 20 1 * *
 
 env:
   REPO_URL: https://github.com/LiBwrt/openwrt-6.x.git
